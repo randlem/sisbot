@@ -1,0 +1,1 @@
+Brobot, an IRC bot, written by my lovely and talented coworked Lucas Oman in PH is an abomiation of nature, since it's not written in NodeJS, the acclaimed toy framework.  So, I'm writing brobot's sister.

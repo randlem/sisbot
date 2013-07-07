@@ -47,11 +47,13 @@ function Irc(options) {
 		self.socket = socket;
 		socket.write(cmd('NICK', [self.user]));
 		socket.write(cmd('USER', [self.user, 0, '*', ':Sisbot']));
-		if (self.channels.lenght > 0) {
-			_.each(self.channels, function(channel) {
-				socket.write('JOIN', [channel]);
-			});
-		}
+		setTimeout(function() {
+			if (self.channels.length > 0) {
+				_.each(self.channels, function(channel) {
+					socket.write(cmd('JOIN', [':#' + channel]));
+				});
+			}
+		}, 10000);
 	};
 
 	self.end = function() {
